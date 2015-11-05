@@ -1,5 +1,5 @@
 /* 
-© 2015 Maddie Chili, Davis Rumley, Zane Laughery
+© 2015 Davis Rumley & Ben Fobert
 */
 
 /* 
@@ -51,6 +51,10 @@ footer{
 p{
   margin-left: 2em;
 }
+#table tr{
+    text-align: center;
+}
+
 }
 
 /* 
@@ -108,6 +112,9 @@ p{
 }
 #return{
     padding:25px;
+}
+#calc_input{
+   text-align: center;
 }
 }
 

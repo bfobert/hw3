@@ -40,11 +40,14 @@ public class currencyTag extends BodyTagSupport {
     @Override
     public void doInitBody() {
         count = 0;
-        calc = (Calc) calcs.get(count);
         pageContext.setAttribute("Investment", calc.getInvestment());
         pageContext.setAttribute("Rate", calc.getRate());
-        double future = calc.getFuture();
-        String priceAsString = currency.format(future);
+        ArrayList<Double> future = new ArrayList<>();
+        future = calc.getFuture();
+        ArrayList<String> futures = new ArrayList<>();
+        for(int i=0;i<=future.size();i++){
+            futures.add(currency.format(future));
+        }
         pageContext.setAttribute("price", priceAsString);
         count++;
     }
@@ -60,7 +63,7 @@ public class currencyTag extends BodyTagSupport {
         pageContext.setAttribute(
                 "total", calc.getPriceCurrencyFormat());
                 /*Was originally item.getTotalCurrencyFormat -- changed to fit Calc Bean format*/
-/*    }
+ /*   }
     @Override
     public int doAfterBody() throws JspException {
         try {

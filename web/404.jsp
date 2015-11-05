@@ -1,5 +1,5 @@
 <%-- 
-© 2015 Maddie Chili, Davis Rumley, Zane Laughery
+© 2015 Davis Rumley & Ben Fobert
 --%>
 <%@ include file="/includes/header.html" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

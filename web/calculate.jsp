@@ -1,10 +1,10 @@
 <%-- 
-© 2015 Maddie Chili, Davis Rumley, Zane Laughery
+© 2015 Davis Rumley & Ben Fobert
 --%>
 <%@ include file="/includes/header.html" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tlds/calculation.tld" prefix="elon" %>
-
+<section id="calc_input">
 <h1>Future Value Calculator</h1>
 
 <label>Investment Amount:</label>
@@ -13,7 +13,7 @@
 <span>${calculation.rate}</span><br>
 <label>Number of Years:</label>
 <span>${calculation.years}</span><br>
-<label>Future Value:</label>
+</section>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -22,34 +22,22 @@
         <th>Year</th>
         <th>Future Value</th>
     </tr>
-    
+    <c:set var="year" value="0" scope="page" />
      <c:forEach items="${calculation.future}" var="calcs">
     <tr>
-        <td>years</td>
+        <c:set var="year" value="${year + 1}" scope="page"/>
+        <td>${year}</td>
         <td>${calcs}</td>
     </tr>
-    </c:forEach> 
-    <!--These are just place-holder values. Not sure if we need the math in this page or not-->
+    </c:forEach>
 
 <tr>
-    <td><elon:currency>${price}</elon:currency></td>
-    <td>Smith</td> 
+    <td><elon:currency>${price}</elon:currency></td> 
 </tr>
-<tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-</tr>
+
 </table>
    
-<button onclick="goBack1()">Return to Calculator</button>
-<script>
-    function goBack1() {
-        window.history.back();
-    }
-    function goBack2() {
-        window.open("/index.jsp");
-    }
-</script>
-    
+
+<a href="index.jsp">Back to Calculator</a>
 
 <%@include file="/includes/footer.jsp" %>

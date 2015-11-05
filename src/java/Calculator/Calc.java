@@ -19,8 +19,8 @@ public class Calc implements Serializable{
     private double investment;
     private double rate;
     private double years;
-    private ArrayList<Double> future;
-    
+    ArrayList<String> future = new ArrayList<>();
+    ArrayList<Integer> displayYear = new ArrayList<>();
     
     /**
      * Initialize product with empty strings and 0 price.
@@ -61,22 +61,28 @@ public class Calc implements Serializable{
     }
     
   
-    public ArrayList<Double> getFuture(){
+    public ArrayList<String> getFuture(){
         return future;
     }
     public void setFuture(double investment, double rate, double years){
+        System.out.println(investment + " invest");
+        System.out.println(rate + " rate");
+        System.out.println(years + " years");
         int i;
-        
-        for(i = 0; i <= years; i++){
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        for(i = 1; i <= years; i++){
            investment += investment * (rate/100);
-           double newYear = investment;
+           
+           String newYear = currency.format(investment);
            future.add(newYear);
-           System.out.println(newYear + "haha");
+           displayYear.add(i);
         }
         
     }
-        
-    
+        public ArrayList<Integer> getDisplayYear(){
+        return displayYear;
+    }
+ 
     
     public String getPriceCurrencyFormat() {
         NumberFormat currency = NumberFormat.getCurrencyInstance();

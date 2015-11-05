@@ -1,5 +1,5 @@
 <%-- 
-© 2015 Maddie Chili, Davis Rumley, Zane Laughery
+© 2015 Davis Rumley & Ben Fobert
 ${currentYear}
 --%>
 <footer>

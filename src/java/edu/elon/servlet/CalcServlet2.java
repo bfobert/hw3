@@ -8,11 +8,13 @@ package edu.elon.servlet;
 import Calculator.Calc;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -73,7 +75,7 @@ public class CalcServlet2 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        HttpSession session = request.getSession();
         String url = "/index.jsp";
 
         String action = request.getParameter("action");
@@ -82,14 +84,15 @@ public class CalcServlet2 extends HttpServlet {
             url = "/index.jsp";
 
             String investment = request.getParameter("investment");
+            session.setAttribute("investment", investment);
             String rate = request.getParameter("rate");
+            session.setAttribute("rate", rate);
             String years = request.getParameter("years");
 
             Calc calculation = new Calc();
-            System.out.println(investment);
-            System.out.println(rate);
+            System.out.println(investment + "lol");
+            System.out.println(rate + "haha");
             System.out.println(years);
-            System.out.println();
             //calculation.setInvestment(5.0);
             //calculation.setRate(6.0);
             //calculation.setYears(7.3);
