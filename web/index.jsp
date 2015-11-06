@@ -1,6 +1,11 @@
-<%-- 
+<!-- 
 © 2015  Davis Rumley & Ben Fobert
---%>
+-->
+<!DOCTYPE html>
+<head>
+    <title>Calculator Index</title>
+    
+</head>
 <%@ include file="/includes/header.html" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

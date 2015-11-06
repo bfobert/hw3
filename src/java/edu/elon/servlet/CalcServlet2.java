@@ -90,12 +90,6 @@ public class CalcServlet2 extends HttpServlet {
             String years = request.getParameter("years");
 
             Calc calculation = new Calc();
-            System.out.println(investment + "lol");
-            System.out.println(rate + "haha");
-            System.out.println(years);
-            //calculation.setInvestment(5.0);
-            //calculation.setRate(6.0);
-            //calculation.setYears(7.3);
             calculation.setInvestment(Double.parseDouble(investment));
             calculation.setRate(Double.parseDouble(rate));
             calculation.setYears(Double.parseDouble(years));

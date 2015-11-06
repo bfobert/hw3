@@ -1,6 +1,11 @@
-<%-- 
+<!-- 
 © 2015 Davis Rumley & Ben Fobert
---%>
+-->
+<!DOCTYPE html>
+<head>
+    <title>404 Page</title>
+    
+</head>
 <%@ include file="/includes/header.html" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 

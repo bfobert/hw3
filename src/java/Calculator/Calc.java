@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class Calc implements Serializable{
     
-    private double investment;
+    private String investment;
     private double rate;
     private double years;
     ArrayList<String> future = new ArrayList<>();
@@ -26,21 +26,22 @@ public class Calc implements Serializable{
      * Initialize product with empty strings and 0 price.
      */
     public Calc() {
-        investment = 0;
+        investment = "0";
         rate = 0;
         years = 0;
     }
-    public Calc(double investment, double rate, int years){
+    public Calc(String investment, double rate, int years){
         this.investment = investment;
         this.rate = rate;
         this.years = years;
     }
     
     public void setInvestment(double investment) {
-        this.investment = investment;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        this.investment = currency.format(investment);
     }
 
-    public double getInvestment() {
+    public String getInvestment() {
         return investment;
     }
 
